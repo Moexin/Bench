@@ -1,0 +1,7 @@
+rm -f /usr/bin/nali
+nali=$(wget -qO- https://api.github.com/repos/zu1k/nali/releases | grep -o '"tag_name": ".*"' | head -n 1 | sed 's/"//g' | sed 's/tag_name: //g')
+wget -N "https://github.com/zu1k/nali/releases/download/${nali}/nali-linux-amd64-${nali}.gz"
+gzip -d nali-linux-amd64-${nali}.gz
+mv nali-linux-amd64-${nali} /usr/bin/nali
+chmod +x /usr/bin/nali
+nali update
