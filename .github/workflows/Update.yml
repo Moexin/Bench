@@ -9,8 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Update
+    - name: Step 1 - Checkout
+      uses: actions/checkout@v2
+    - name: Step 2 - Build
       run: |
         rm -f Bench.sh
         wget https://ilemonra.in/LemonBenchIntl
@@ -62,10 +63,7 @@ jobs:
         sed -i '/购买/d' LemonBenchIntl
         sed -i '1r ./.github/Mod' LemonBenchIntl
         mv LemonBenchIntl Bench.sh
-        git config --global user.name Moexin
-        git checkout --orphan latest_branch
-        git add -A
-        git commit -am "Update"
-        git branch -D master
-        git branch -m master
-        git push -f origin master
+    - name: Step 3 - Release
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update
