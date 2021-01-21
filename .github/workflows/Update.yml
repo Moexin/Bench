@@ -44,6 +44,7 @@ jobs:
         sed -i 's/CPU Performance Test/CPU性能测试/' LemonBenchIntl
         sed -i 's/Memory Performance Test/内存性能测试/' LemonBenchIntl
         sed -i 's/Thread Test/线程跑分/' LemonBenchIntl
+        sed -i 's/Threads Test/线程跑分/' LemonBenchIntl
         sed -i 's/1 Thread - Read Test /读取速度/' LemonBenchIntl
         sed -i 's/1 Thread - Write Test/写入速度/' LemonBenchIntl
         sed -i 's/Disk Speed Test/硬盘速度测试/' LemonBenchIntl
