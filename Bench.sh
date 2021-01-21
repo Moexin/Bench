@@ -1500,9 +1500,9 @@ Function_SysBench_CPU_Fast() {
     echo -e "\n -> CPU性能测试 (Fast Mode, 1-Pass @ 5sec)\n" >>${WorkDir}/SysBench/CPU/result.txt
     Run_SysBench_CPU "1" "5" "1" "1 线程跑分"
     if [ "${LBench_Result_CPUThreadNumber}" -ge "2" ]; then
-        Run_SysBench_CPU "${LBench_Result_CPUThreadNumber}" "5" "1" "${LBench_Result_CPUThreadNumber} Threads Test"
+        Run_SysBench_CPU "${LBench_Result_CPUThreadNumber}" "5" "1" "${LBench_Result_CPUThreadNumber} 线程跑分"
     elif [ "${LBench_Result_CPUProcessorNumber}" -ge "2" ]; then
-        Run_SysBench_CPU "${LBench_Result_CPUProcessorNumber}" "5" "1" "${LBench_Result_CPUProcessorNumber} Threads Test"
+        Run_SysBench_CPU "${LBench_Result_CPUProcessorNumber}" "5" "1" "${LBench_Result_CPUProcessorNumber} 线程跑分"
     fi
     # 完成FLAG
     LBench_Flag_FinishSysBenchCPUFast="1"
@@ -1514,9 +1514,9 @@ Function_SysBench_CPU_Full() {
     echo -e "\n -> CPU性能测试 (Standard Mode, 3-Pass @ 30sec)\n" >>${WorkDir}/SysBench/CPU/result.txt
     Run_SysBench_CPU "1" "30" "3" "1 线程跑分"
     if [ "${LBench_Result_CPUThreadNumber}" -ge "2" ]; then
-        Run_SysBench_CPU "${LBench_Result_CPUThreadNumber}" "30" "3" "${LBench_Result_CPUThreadNumber} Threads Test"
+        Run_SysBench_CPU "${LBench_Result_CPUThreadNumber}" "30" "3" "${LBench_Result_CPUThreadNumber} 线程跑分"
     elif [ "${LBench_Result_CPUProcessorNumber}" -ge "2" ]; then
-        Run_SysBench_CPU "${LBench_Result_CPUProcessorNumber}" "30" "3" "${LBench_Result_CPUProcessorNumber} Threads Test"
+        Run_SysBench_CPU "${LBench_Result_CPUProcessorNumber}" "30" "3" "${LBench_Result_CPUProcessorNumber} 线程跑分"
     fi
     # 完成FLAG
     LBench_Flag_FinishSysBenchCPUFull="1"
